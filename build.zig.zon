@@ -1,0 +1,21 @@
+.{
+    .name = "opusfile",
+    .version = "0.0.0",
+    .paths = .{
+        "include",
+        "src",
+        "build.zig",
+        "build.zig.zon",
+        "COPYING",
+        "README.md",
+        "update.sh",
+        "verify.sh",
+    },
+    .dependencies = .{
+        // .opus = .{
+        //     .url = "https://pkg.machengine.org/opus/7eddaec093d7056ce96ffc9712db8abd76bb262b.tar.gz",
+        //     .hash = "12204ccca518df3c7e19a5b739aca7d77f0be92f068f7c81316f2d4b7db085945ae9",
+        // },
+        .opus = .{ .path = "../opus" },
+    },
+}

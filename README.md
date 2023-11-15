@@ -1,11 +1,23 @@
-# Libopusenc
+# Opusenc packaged for the Zig build system
 
-The libopusenc libraries provide a high-level API for
-encoding .opus files. libopusenc depends only on libopus.
+This is a fork of [opusenc](https://github.com/xiph/libopusenc), packaged for Zig. Unnecessary files have been deleted, and the build system has been replaced with build.zig.
 
-The library is in very early development.
-Please give feedback
-in #opus on irc.libera.chat or at opus@xiph.org.
+_Looking for Zig bindings to Opusenc?_ See [mach-opus](https://github.com/hexops/mach-opus).
 
-Programming documentation is available in tree and online at
-https://opus-codec.org/docs/
+## Updating
+
+To update this repository, run `./update.sh` followed by `./verify.sh` to verify the repository contents.
+
+## Verifying repository contents
+
+For supply chain security reasons (e.g. to confirm we made no patches to the code) we provide a `git diff` command you can run to verify the contents of this repository:
+
+```sh
+./verify.sh
+```
+
+If nothing is printed, there is no diff. Deleted files, and changes to `README.md`, `build.zig`, `.github` CI files and `.gitignore` are ignored.
+
+## Issues
+
+Issues are tracked in the [main Mach repository](https://github.com/hexops/mach/issues?q=is%3Aissue+is%3Aopen+label%3Aopusenc).
