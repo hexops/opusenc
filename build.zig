@@ -13,14 +13,14 @@ pub fn build(b: *std.Build) void {
     });
     lib.linkLibC();
     lib.linkLibrary(opus_dep.artifact("opus"));
-    lib.addIncludePath(.{ .path = "include" });
-    lib.addIncludePath(.{ .path = "src" });
+    lib.addIncludePath(b.path("include"));
+    lib.addIncludePath(b.path("src"));
     lib.addCSourceFiles(.{ .files = &sources, .flags = &.{
         "-DHAVE_CONFIG_H",
         "-DOUTSIDE_SPEEX",
         "-DRANDOM_PREFIX=MACH",
     } });
-    lib.installHeadersDirectory("include", "");
+    lib.installHeadersDirectory(b.path("include"), "", .{});
     const config_header = b.addConfigHeader(.{ .style = .blank }, .{
         .PACKAGE_NAME = "opusenc",
         .PACKAGE_VERSION = "0.1",
